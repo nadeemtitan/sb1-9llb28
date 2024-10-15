@@ -1,0 +1,33 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Basic Information</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" [(ngModel)]="basicInfo.fullName" name="fullName" required>
+          </div>
+          <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" [(ngModel)]="basicInfo.dateOfBirth" name="dateOfBirth" required>
+          </div>
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" id="gender" [(ngModel)]="basicInfo.gender" name="gender" required>
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="bio" class="form-label">Bio</label>
+            <textarea class="form-control" id="bio" rows="3" [(ngModel)]="basicInfo.bio" name="bio"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Save Information</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

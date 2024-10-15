@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Photo Upload</h2>
+        <div class="mb-3">
+          <label for="photoUpload" class="form-label">Choose a photo</label>
+          <input type="file" class="form-control" id="photoUpload" (change)="onFileSelected($event)" accept="image/*">
+        </div>
+        <button class="btn btn-primary w-100 mb-3" (click)="onUpload()" [disabled]="!selectedFile">Upload Photo</button>
+        
+        <h3 class="text-center mt-5 mb-3">Photo Gallery</h3>
+        <div class="row">
+          <div class="col-4 mb-3" *ngFor="let photo of photos; let i = index">
+            <img [src]="photo" class="img-fluid rounded" (click)="openPhotoModal(i)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!-- Photo Modal -->
+<div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img [src]="selectedPhoto" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
